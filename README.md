@@ -17,6 +17,6 @@ The character has basically only one life but can protect itself from the shadow
 That's already it. It was a fun experiment to create something with Godot and GDScript but I don't whink I'll ever continue this project.
 
 ## Impressions
-![screenshot](screenshots\screenshot.png?raw=true)
-![another screenshot](screenshots\screenshot-1.png?raw=true)
-![and yet another screenshot](screenshots\screenshot-2.png?raw=true)
+![screenshot](screenshots/screenshot.png?raw=true)
+![another screenshot](screenshots/screenshot-1.png?raw=true)
+![and yet another screenshot](screenshots/screenshot-2.png?raw=true)
