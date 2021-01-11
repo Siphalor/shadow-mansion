@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/materials/planks.material" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 10, 10, 0.1 )
+
+[node name="BackWallPlanks" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.61527, -0.818443 )
+mesh = SubResource( 1 )
+material/0 = null

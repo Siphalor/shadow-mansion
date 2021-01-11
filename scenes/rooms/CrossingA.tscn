@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/structures/floor_planks.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/structures/wall_stone_bricks.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/structures/back_wall_stone_bricks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/overlays/square-cross-window.png" type="Texture" id=5]
+[ext_resource path="res://scenes/objects/cobweb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/objects/candle_holder.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/table.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/entities/enemies/ghost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/materials/planks.material" type="Material" id=11]
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 11 )
+size = Vector3( 8, 1, 2 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4, 0.5, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.85664, 2.0876, 1 )
+
+[node name="CrossingA" type="Spatial"]
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.339597, 0, 0, 0, 0.339597, 0, 0, 0, 0.477538, -0.353916, 1.20115, 0.248921 )
+
+[node name="Box2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.228154, 0, 0, 0, 0.228154, 0, 0, 0, 0.232682, 0.677395, 0.74667, 0.633486 )
+
+[node name="Box3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.415931, 0, 0, 0, 0.415931, 0, 0, 0, 0.397612, 3.62132, 5.01078, 0.465931 )
+
+[node name="Floor3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.589176, 0, 0, 0, 0.883948, 0, 0, 0, 1, -2.10737, 6.89151, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.985181, 0.171516, 0, -0.171516, 0.985181, 0.081619, 7.93504, 10.8793 )
+light_color = Color( 0.521569, 0.729412, 0.972549, 1 )
+light_energy = 7.54
+shadow_enabled = true
+spot_range = 16.6817
+spot_angle = 27.6733
+spot_angle_attenuation = 1.7411
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.784838, 0, 0, 0, 0.784838, 0, 0, 0, 1, 0, 7.51427, 8.42263 )
+alpha_cut = 2
+texture = ExtResource( 5 )
+
+[node name="Box5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.271151, 0, 0, 0, 0.271151, 0, 0, 0, 0.415159, 1.97711, 3.77338, 0.433608 )
+
+[node name="Box6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.271151, 0, 0, 0, 0.271151, 0, 0, 0, 0.415159, -4.52199, 8.89442, 0.433608 )
+
+[node name="Box7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.271151, 0, 0, 0, 0.271151, 0, 0, 0, 0.415159, -4.52199, 7.80211, -0.0478642 )
+
+[node name="Box4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.626389, 0, 0, 0, 0.626389, 0, 0, 0, 1, 2.97417, 1.97406, -0.122464 )
+
+[node name="Cobweb" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.419199, 0, 0, 0, 0.419199, 0, 0, 0, 1, -3.29538, 4.83328, 0.000319004 )
+
+[node name="CandleHolder" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.264442, 0, 0, 0, 0.264442, 0, 0, 0, 1.03447, -0.783016, 4.11413, -0.477803 )
+
+[node name="CandleHolder2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.264442, 0, 0, 0, 0.264442, 0, 0, 0, 1.03447, 2.90527, 8.58475, -0.413749 )
+
+[node name="Floor2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46006, 10.2522, 0 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor2"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor2"]
+shape = SubResource( 3 )
+
+[node name="Cobweb2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.324749, 0.0114256, 0, -0.0114256, 0.324749, 0, 0, 0, 1, 2.90021, 8.06833, -0.473121 )
+flip_h = true
+
+[node name="Table" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.17587, 0, 0, 0, 1.17587, 0, 0, 0, 1, -3.08994, 7.9705, -0.171804 )
+
+[node name="BackWallStoneBricks" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3994, -0.938421 )
+
+[node name="WallStoneBricks" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.06939, 7.95667, 0.0379304 )
+
+[node name="Spawner" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98291, 8.67097, 0 )
+entities = [ ExtResource( 10 ) ]
+
+[node name="CollisionShape" parent="Spawner" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12045, 0, 0 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="Spawner" to="Spawner" method="player_entered"]
+
+[editable path="Spawner"]

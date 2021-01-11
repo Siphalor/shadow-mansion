@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/objects/torn-fabric.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Remains.gd" type="Script" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.190606
+height = 0.0850425
+
+[node name="RigidBody" type="RigidBody" groups=[
+"remains",
+]]
+input_ray_pickable = false
+collision_layer = 1024
+collision_mask = 1027
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.282553, 0, 0, 0, 0.282553, 0, 0, 0, 0.880167, 0, 0, 0 )
+shaded = true
+alpha_cut = 2
+texture = ExtResource( 1 )
